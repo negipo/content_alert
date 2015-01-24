@@ -8,4 +8,7 @@ task :install do
   agent_dest = File.join(AGENT_DIR, AGENT_FILE_NAME)
   File.open(agent_dest, 'w').write file
   sh "launchctl load -w #{agent_dest}"
+
+  puts 'test run!'
+  sh "./app.rb"
 end

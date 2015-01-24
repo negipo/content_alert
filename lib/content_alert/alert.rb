@@ -10,6 +10,8 @@ module ContentAlert
           if config.launch_browser
             Launchy.open(config.uri)
           end
+        else
+          puts 'not found'
         end
       end
     end
