@@ -1,0 +1,6 @@
+---
+- :name: 2014年発売MBP 256Gストレージ
+  :uri: http://store.apple.com/jp/browse/home/specialdeals/mac/macbook_pro/13
+  :css: td.specs
+  :regexp: 13.3インチMacBook Pro.*2014年.*256G
+  :launch_browser: false
