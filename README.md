@@ -6,7 +6,7 @@ Only works with OSX and requires growl.
 
 ```
 $ cp config/contents.yml.sample config/contents.yml
-$ rake install # This will create Launch Agent config.
+$ rake install # This will create launchd config.
 ```
 
 Then modify config/contents.yml like followings.
