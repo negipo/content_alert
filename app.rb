@@ -7,7 +7,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'content_alert'
 
 def main
-  return if File.exists?("#{ENV['HOME']}/.stop_content_alert")
+  if File.exists?("#{ENV['HOME']}/.stop_content_alert")
+    puts '.stop_content_alert exists'
+    return
+  end
   ContentAlert::Alert.run
 end
 
