@@ -8,7 +8,7 @@ module ContentAlert
 
     def content_exists?
       Nokogiri::HTML(open(@config.uri)).css(@config.css).each do |element|
-        return true if @config.regexp === element.text
+        return true if @config.regexp === element.to_s
       end
 
       false
