@@ -23,7 +23,7 @@ Then modify config/contents.yml like followings.
 Also you can stop alerting temporary to do as followings.
 
 ```
-$ touch ~/.stop_content_alert # This stops alerting temporary.
+$ echo 'STOP_CONTENT_ALERT=1' > .env
 ```
 
 # License
