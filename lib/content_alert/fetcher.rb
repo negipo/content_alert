@@ -7,11 +7,17 @@ module ContentAlert
     end
 
     def content_exists?
-      Nokogiri::HTML(open(@config.uri)).css(@config.css).each do |element|
+      Nokogiri::HTML(body).css(@config.css).each do |element|
         return true if @config.regexp === element.to_s
       end
 
       false
+    end
+
+    def body
+      Retryable.retryable(tries: 10, on: OpenURI::HTTPError, sleep: 5) do
+        @body ||= open(@config.uri)
+      end
     end
   end
 end
