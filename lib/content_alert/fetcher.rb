@@ -16,7 +16,7 @@ module ContentAlert
 
     def body
       Retryable.retryable(tries: 10, on: OpenURI::HTTPError, sleep: 5) do
-        @body ||= open(@config.uri)
+        @body ||= open(@config.uri).read
       end
     end
   end
