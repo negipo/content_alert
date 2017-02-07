@@ -18,6 +18,7 @@ Then modify config/contents.yml like followings.
   :css: td.specs
   :regexp: 13.3インチMacBook Pro.*2014年.*256G
   :launch_browser: true
+  :appear: true
 ```
 
 Also you can stop alerting temporary to do as followings.
