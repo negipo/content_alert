@@ -4,7 +4,7 @@ module ContentAlert
       Config.all.each do |config|
         fetcher = Fetcher.new(config)
 
-        if fetcher.content_exists? ^ !config.appear
+        if fetcher.match?
           Growl.notify("#{config.name} matches.")
 
           if config.launch_browser

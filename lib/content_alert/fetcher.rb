@@ -6,9 +6,9 @@ module ContentAlert
       @config = config
     end
 
-    def content_exists?
+    def match?
       Nokogiri::HTML(body).css(@config.css).each do |element|
-        return true if @config.regexp === element.to_s
+        return true if !!(@config.regexp === element.to_s) ^ !@config.appear
       end
 
       false
